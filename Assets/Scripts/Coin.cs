@@ -3,16 +3,6 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public enum CoinType
-    {
-        Default,
-        Blue,
-        Red
-    }
-
-    public CoinType Type => coinType;
-
-    [SerializeField] private CoinType coinType = CoinType.Default;
     [SerializeField] private int value = 1;
     [SerializeField] private float rotSpeed = 2;
 
@@ -76,21 +66,7 @@ public class Coin : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        switch (coinType)
-        {
-            case CoinType.Default:
-                GameManager.Instance.AddScore(value);
-                break;
-
-            case CoinType.Red:
-                GameManager.Instance.SpawnBlueCoins();
-                break;
-
-            case CoinType.Blue:
-                GameManager.Instance.AddBonusScore(value);
-                break;
-        }
-
+        GameManager.Instance.AddScore(value);
         Destroy(gameObject);
     }
 }

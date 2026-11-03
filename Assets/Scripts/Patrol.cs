@@ -22,6 +22,7 @@ public class Patrol : MonoBehaviour
     [SerializeField] private float speed = 2f;
     [SerializeField] private float waitTime = 1f;
     [SerializeField] private float turnSpeed = 360f;
+    [SerializeField] private int damage;
 
     [Header("FOV Settings")]
     [SerializeField] private float viewAngle;
@@ -155,6 +156,14 @@ public class Patrol : MonoBehaviour
 
             default:
                 return (_currIndex + 1) % points.Length;
+        }
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if(other.TryGetComponent(out Health health))
+        {
+            health.TakeDamage(damage);
         }
     }
 }
