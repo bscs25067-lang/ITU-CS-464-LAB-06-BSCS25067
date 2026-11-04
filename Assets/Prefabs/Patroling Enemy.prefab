@@ -142,12 +142,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 2
-  waitTime: 1
+  speed: 3
+  waitTime: 0.5
   turnSpeed: 360
   damage: 1
-  viewAngle: 30
-  viewDistance: 5
+  viewAngle: 60
+  viewDistance: 10
 --- !u!136 &7599418337782173198
 CapsuleCollider:
   m_ObjectHideFlags: 0
