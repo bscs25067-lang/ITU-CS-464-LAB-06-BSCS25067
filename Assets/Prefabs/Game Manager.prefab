@@ -135,5 +135,6 @@ MonoBehaviour:
   playerRadius: 2
   coinPrefab: {fileID: 8769529563537955040, guid: b605fb924e0c02547b46108cff3b5eba, type: 3}
   maxCoins: 8
-  area: 8
+  areaX: 14
+  areaY: 9
   interval: 1.5

@@ -8,7 +8,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject coinPrefab;
 
     [SerializeField] private int maxCoins;
-    [SerializeField] private int area;
+    [SerializeField] private int areaX;
+    [SerializeField] private int areaY;
     [SerializeField] private float interval;
 
     private float _duration;
@@ -46,8 +47,8 @@ public class Spawner : MonoBehaviour
 
         while (true)
         {
-            float x = Random.Range(-area, area + 1);
-            float z = Random.Range(-area, area + 1);
+            float x = Random.Range(-areaX, areaX + 1);
+            float z = Random.Range(-areaY, areaY + 1);
             spawnPos = new Vector3(x, 0.5f, z);
 
             if (Vector3.Distance(spawnPos, player.position) >= playerRadius)
