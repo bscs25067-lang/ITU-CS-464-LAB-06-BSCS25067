@@ -85,7 +85,7 @@ public class Patrol : MonoBehaviour
         {
             if (hit.collider.CompareTag(_player.tag))
             {
-                _lastPlayerPos = _player.position;
+                _lastPlayerPos = new Vector3(_player.position.x, 0, _player.position.z);
                 return true;
             }
         }
@@ -110,9 +110,10 @@ public class Patrol : MonoBehaviour
 
     private void HandleChase()
     {
-        transform.position = Vector3.MoveTowards(transform.position, _player.position, speed * Time.deltaTime);
+        Vector3 playerPos = new Vector3(_player.position.x, 0, _player.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, playerPos, speed * Time.deltaTime);
 
-        Vector3 toTarget = _player.position - transform.position;
+        Vector3 toTarget = playerPos - transform.position;
         if (toTarget != Vector3.zero)
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(toTarget), turnSpeed * Time.deltaTime);
     }

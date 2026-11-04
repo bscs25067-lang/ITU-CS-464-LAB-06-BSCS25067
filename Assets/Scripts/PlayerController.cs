@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("Boost Settings")]
     [SerializeField] private float boostMultipler = 1;
     [SerializeField] private float boostDuration = 5;
+    [SerializeField] private ParticleSystem speedVisual;
 
     private bool _isBoostActive;
     private Coroutine _activeBoost;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        speedVisual.Stop();
     }
 
     private void Update()
@@ -43,7 +45,9 @@ public class PlayerController : MonoBehaviour
     IEnumerator ApplySpeedMultipler()
     {
         _isBoostActive = true;
+        speedVisual.Play();
         yield return new WaitForSeconds(boostDuration);
         _isBoostActive = false;
+        speedVisual.Stop();
     }
 }

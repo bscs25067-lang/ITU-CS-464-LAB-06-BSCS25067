@@ -8,6 +8,10 @@ public class Health : MonoBehaviour
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private float flashInterval = 0.1f;
 
+    [Header("Shield Settings")]
+    [SerializeField] private ParticleSystem shieldVisual;
+    [SerializeField] private ParticleSystem shieldBreakEffect;
+
     public bool shielded;
 
     private int _current;
@@ -34,6 +38,20 @@ public class Health : MonoBehaviour
             _material = meshRenderer.material;
             _originalColor = _material.color;
         }
+
+        shieldVisual.Stop();
+    }
+
+    public void SetShield(bool active)
+    {
+        shielded = active;
+
+        if (active) shieldVisual.Play();
+        else
+        {
+            shieldVisual.Stop();
+            shieldBreakEffect.Play();
+        }
     }
 
     public bool TakeDamage(int amount)
@@ -43,7 +61,7 @@ public class Health : MonoBehaviour
 
         if (shielded)
         {
-            shielded = false;
+            SetShield(false);
             return false;
         }
 

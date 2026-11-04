@@ -19,7 +19,7 @@ public class PowerUp : MonoBehaviour
         if (type == PowerUpType.Speed)
             other.GetComponent<PlayerController>().BoostSpeed();
         else
-            other.GetComponent<Health>().shielded = true;
+            other.GetComponent<Health>().SetShield(true);
 
         Destroy(gameObject);
     }
