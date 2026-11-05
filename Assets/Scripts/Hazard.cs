@@ -8,6 +8,7 @@ public class Hazard : MonoBehaviour
     [SerializeField] float restTime = 1f, warnTime = 0.7f, strikeTime = 0.4f;
     [SerializeField] GameObject warning;
     [SerializeField] GameObject active;
+    [SerializeField] private ParticleSystem fx;
 
     [Header("Stomp Animation Settings")]
     [SerializeField] private Transform stomper;
@@ -64,11 +65,11 @@ public class Hazard : MonoBehaviour
             zone.enabled = true;
             if (active != null) active.SetActive(true);
 
-            yield return StartCoroutine(MoveStomper(_startLocalPos, _slammedLocalPos, strikeTime, true));
+            yield return StartCoroutine(MoveStomper(_startLocalPos, _slammedLocalPos, strikeTime, true, true));
         }
     }
 
-    private IEnumerator MoveStomper(Vector3 from, Vector3 to, float duration, bool useStompEase)
+    private IEnumerator MoveStomper(Vector3 from, Vector3 to, float duration, bool useStompEase, bool play = false)
     {
         float elapsed = 0f;
 
@@ -83,6 +84,7 @@ public class Hazard : MonoBehaviour
             yield return null;
         }
 
+        if(play) fx.Play();
         stomper.localPosition = to;
     }
 

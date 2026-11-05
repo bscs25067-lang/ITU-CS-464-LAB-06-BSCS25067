@@ -348,6 +348,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177081496}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!198 &201982425 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3981252217009474443, guid: 6bd0f758ec9c36e449d0b9beff527e02, type: 3}
+  m_PrefabInstance: {fileID: 553115448811805820}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,11 +1259,6 @@ Transform:
   - {fileID: 1931590149}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1454771475 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 147514828409107414, guid: 6bd0f758ec9c36e449d0b9beff527e02, type: 3}
-  m_PrefabInstance: {fileID: 553115448811805820}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1494100940 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7527992717645484546, guid: 28967e3b851e6b345b46a57e65be934a, type: 3}
@@ -1647,9 +1647,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5544689332031642923, guid: 6bd0f758ec9c36e449d0b9beff527e02, type: 3}
-      propertyPath: stomper
+      propertyPath: fx
       value: 
-      objectReference: {fileID: 1454771475}
+      objectReference: {fileID: 201982425}
     - target: {fileID: 6331778080900497443, guid: 6bd0f758ec9c36e449d0b9beff527e02, type: 3}
       propertyPath: m_Name
       value: Hazard Area
@@ -1694,9 +1694,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6135538955902545459, guid: 6bd0f758ec9c36e449d0b9beff527e02, type: 3}
-    - {fileID: 1031965715357016297, guid: 6bd0f758ec9c36e449d0b9beff527e02, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
