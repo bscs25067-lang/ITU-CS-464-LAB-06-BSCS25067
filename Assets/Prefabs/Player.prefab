@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 5
   boostMultipler: 1
-  boostDuration: 5
+  boostDuration: 10
   speedVisual: {fileID: 77050111926961395}
 --- !u!1 &2437208435187650741
 GameObject:
