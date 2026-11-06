@@ -137,8 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e3891597d59fb41a6aa3e7cdef4a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Patrol
-  currMode: 0
+  currMode: 1
   points:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
